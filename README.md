@@ -51,28 +51,28 @@ So, I create this library with the intension to reduce the unit testing boilerpl
 ```C#
 public class TestClass
 {
-  private class TestBuilder : MoqTestBuilder<TestObject>
+  private class Builder : MoqTestBuilder<TestObject>
   {
   }
 }
 ```
 
-2. Define class properties in the ***TestBuilder*** class. 
+2. Define class properties in the ***Builder*** class. 
 > All reference type properties other than string will be dynamically created and assigned by the TestBuilder favor implementation.
 >
 > The ***TestObject*** is created with its public constructor that has the most parameters. If the parameter is the same type of any of the properties defined
-> in the ***TestBuilder***, the property of the ***TestBuilder*** will be passed in as the parameter to the constructor. Hence, the ***TestObject*** will have reference
-> to the properties defined in the ***TestBuilder***.
+> in the ***Builder***, the property of the ***Builder*** will be passed in as the parameter to the constructor. Hence, the ***TestObject*** will have reference
+> to the properties defined in the ***Builder***.
 > 
-> Each ***TestBuilder*** implementation has its own convention of defining the class properties. Please see the documentation in each respective repo for examples.
+> Each ***Builder*** implementation has its own convention of defining the class properties. Please see the documentation in each respective repo for examples.
 
-3. You can optionally override the creation of the property objects in the constructor of the ***TestBuilder*** class
+3. You can optionally override the creation of the property objects in the constructor of the ***Builder*** class
 ```C#
-  private class TestBuilder : MoqTestBuilder<TestObject>
+  private class Builder : MoqBaseBuilder<TestObject>
   {
       public DependencyA DepA {get; private set;}
       
-      public TestBuilder(IContainer container)
+      public Builder(IContainer container)
       {
          // override the creation of DepA
          DepA = new DepA();
@@ -92,4 +92,4 @@ Please refer to the source code in the two specific implementation repositories 
 
 <br>
 <br>
-Last Updated: 11/21/2019
+Last Updated: 12/04/2019

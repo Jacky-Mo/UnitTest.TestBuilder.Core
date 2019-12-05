@@ -1,6 +1,6 @@
 ﻿namespace UnitTest.TestBuilder.Core.Abstracts
 {
-    public interface ITestBuilder<out T>
+    public interface IBuilder<out T>
     {
         T Build(params object[] args);
     }

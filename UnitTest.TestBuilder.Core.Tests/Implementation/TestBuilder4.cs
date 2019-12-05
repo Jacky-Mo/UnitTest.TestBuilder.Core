@@ -2,7 +2,7 @@
 
 namespace UnitTest.TestBuilder.Core.Tests.Implementation
 {
-    internal class TestBuilder4 : BaseTestBuilder<TestObject>
+    internal class TestBuilder4 : BaseBuilder<TestObject>
     {
         public TestObject TestObject { get; private set; } = new TestObject(new TestService(), new TestObject2(), DateTime.Now, 8);
         public int Id { get; private set; } = 2;

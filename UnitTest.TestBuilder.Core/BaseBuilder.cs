@@ -6,7 +6,7 @@ using UnitTest.TestBuilder.Core.Abstracts;
 
 namespace UnitTest.TestBuilder.Core
 {
-    public abstract class BaseTestBuilder<TModel> : ITestBuilder<TModel> 
+    public abstract class BaseBuilder<TModel> : IBuilder<TModel> 
     {
         protected IContainer _container;
         private IObjectBuilder _objectBuilder;
@@ -14,12 +14,12 @@ namespace UnitTest.TestBuilder.Core
         private Dictionary<Type, object> _typeInstanceDictionary = new Dictionary<Type, object>(101);
 
         #region Ctors
-        protected BaseTestBuilder(IObjectBuilder objectBuilder) : this(null, objectBuilder)
+        protected BaseBuilder(IObjectBuilder objectBuilder) : this(null, objectBuilder)
         {
 
         }
 
-        protected BaseTestBuilder(IContainer container, IObjectBuilder objectBuilder)
+        protected BaseBuilder(IContainer container, IObjectBuilder objectBuilder)
         {
             _container = container;
             _objectBuilder = objectBuilder;

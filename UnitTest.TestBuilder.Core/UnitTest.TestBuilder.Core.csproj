@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
     <Authors>Jacky Mo</Authors>
     <Description>An extensible C# unit test library that uses builder pattern to streamline creation of dependencies. It reduces the amount of boilerplate code needed when writing unit tests.</Description>
     <Company />
@@ -9,6 +9,9 @@
     <PackageTags>Unit Tests, Test Builder</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Support .net standard 2.0 and 2.1
+Renamed base class and interface</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
