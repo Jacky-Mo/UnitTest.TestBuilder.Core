@@ -6,7 +6,7 @@
     <Description>An extensible C# unit test library that uses builder pattern to streamline creation of dependencies. It reduces the amount of boilerplate code needed when writing unit tests.</Description>
     <Company />
     <RepositoryUrl>https://github.com/Jacky-Mo/UnitTest.TestBuilder.Core</RepositoryUrl>
-    <PackageTags>Unit Tests, Test Builder</PackageTags>
+    <PackageTags>unittest, tests, builder, unittest builder</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.0.1</Version>
