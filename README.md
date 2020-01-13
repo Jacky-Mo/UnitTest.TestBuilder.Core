@@ -43,7 +43,7 @@ So, I create this library with the intension to reduce the unit testing boilerpl
 
 
 #### How to use
-1. Create a TestBuilder class that inherits from the one of the following TestBuilder abstract classes
+1. Create a TestBuilder class that inherits from the one of the following Builder abstract classes
    
 - [UnitTest.TestBuilder.Moq](https://github.com/Jacky-Mo/UnitTest.TestBuilder.Moq)
 - [UnitTest.TestBuilder.FakeItEasy](https://github.com/Jacky-Mo/UnitTest.TestBuilder.FakeItEasy)
@@ -51,17 +51,17 @@ So, I create this library with the intension to reduce the unit testing boilerpl
 ```C#
 public class TestClass
 {
-  private class Builder : MoqTestBuilder<TestObject>
+  private class Builder : MoqBuilder<TestObject>
   {
   }
 }
 ```
 
 2. Define class properties in the ***Builder*** class. 
-> All reference type properties other than string will be dynamically created and assigned by the TestBuilder favor implementation.
+> All reference type properties including string will be dynamically created and assigned by implementation of the Test Builder favor.
 >
 > The ***TestObject*** is created with its public constructor that has the most parameters. If the parameter is the same type of any of the properties defined
-> in the ***Builder***, the property of the ***Builder*** will be passed in as the parameter to the constructor. Hence, the ***TestObject*** will have reference
+> in the ***Builder***, the particular property of the ***Builder*** will be passed in as the parameter to the constructor. Hence, the ***TestObject*** will have access
 > to the properties defined in the ***Builder***.
 > 
 > Each ***Builder*** implementation has its own convention of defining the class properties. Please see the documentation in each respective repo for examples.
@@ -80,16 +80,17 @@ public class TestClass
   }
 ```
 
-4. You can also optionally use dependency injection for the creation of the properties. You can define a custom DI container using your favorite DI library that implements the IContainer interface.
+4. You can also optionally use dependency injection for the creation of the properties. You can define a custom DI container using your favorite DI library that implements the IContainer interface. This is
+useful if you already using a dependency injection and want to reuse some of the dependency setup.
 
-5. You can optionally override the creation of the ***TestObject*** by overriding the *CreateObject* method.
+5. You can optionally override the creation of the ***TestObject*** by overriding the __*CreateObject*__ method.
 
 
 #### How to extend
-Please refer to the source code in the two specific implementation repositories on how to create another favor implementation of your favarite mocking framework.
+Please refer to the source code in the two specific implementation repositories on how to create another implementation of your favarite test mocking framework.
 
 
 
 <br>
 <br>
-Last Updated: 12/04/2019
+Last Updated: Jan-12-2020

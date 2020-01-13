@@ -1,11 +1,11 @@
 ﻿namespace UnitTest.TestBuilder.Core.Tests.Implementation
 {
-    interface ITestService2
+    interface ITestServiceA
     {
         void DoNothing();
     }
 
-    class TestService2 : ITestService2
+    class TestServiceA : ITestServiceA
     {
         public void DoNothing()
         {

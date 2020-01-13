@@ -7,17 +7,24 @@ namespace UnitTest.TestBuilder.Core.Tests.Implementation
     {
         public bool CanCreate(Type type)
         {
-            return type != typeof(ITestService2);
+            return type.IsInterface && type != typeof(ITestServiceC);
         }
 
         public object Create(Type type)
         {
-            if(type == typeof(ITestService))
+            if (!CanCreate(type)) return null;
+
+            if(type == typeof(ITestServiceA))
             {
-                return new TestService();
+                return new TestServiceA();
             }
 
-            return Activator.CreateInstance(type);
+            if (type == typeof(ITestServiceB))
+            {
+                return new TestServiceB();
+            }
+
+            return null;
         }
     }
 }

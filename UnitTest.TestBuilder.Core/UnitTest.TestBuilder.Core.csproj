@@ -3,15 +3,16 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
     <Authors>Jacky Mo</Authors>
-    <Description>An extensible C# unit test library that uses builder pattern to streamline creation of dependencies. It reduces the amount of boilerplate code needed when writing unit tests.</Description>
+    <Description>An extensible C# unit test library that uses builder pattern to streamline creation of dependencies. It reduces the amount of boilerplate code needed when writing unit tests and let the developers to focus on writting the actual test logic.</Description>
     <Company />
     <RepositoryUrl>https://github.com/Jacky-Mo/UnitTest.TestBuilder.Core</RepositoryUrl>
-    <PackageTags>unittest, tests, builder, unittest builder</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>unittest, tests, builder, unittest builder, moq, fakeiteasy</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <PackageReleaseNotes>Support .net standard 2.0 and 2.1
 Renamed base class and interface</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 </Project>
